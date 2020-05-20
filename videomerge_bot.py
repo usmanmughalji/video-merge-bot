@@ -28,8 +28,13 @@ def merge(message):
     """Merge user's videos."""
 
     chat_id = message.chat.id
-    inputs = list()
 
+    # Stops method if user hasn't sent any videos
+    if chat_id not in users_files:
+        bot.send_message(chat_id, 'You didn\'t send any videos to merge')
+        return None
+
+    inputs = list()
     for i, file_id in enumerate(users_files[chat_id]):
         file_info = bot.get_file(file_id)
 

@@ -44,9 +44,19 @@ def merge(message):
     subprocess.call(
         ['ffmpeg', '-f', 'concat', '-i', 'inputs.txt', '-c', 'copy', 'out.mp4']
     )
-    video = open('out.mp4', 'rb')
-    bot.send_video(chat_id, video)
+
+    with open('out.mp4', 'rb') as video:
+        bot.send_video(chat_id, video)
     users_files[chat_id] = []
+
+
+@bot.message_handler(func=lambda message: True, commands=['help'])
+def help(message):
+    help_msg = (
+        'Send the videos you want to merge (preferably in MP4) and use '
+        '\\merge command to receive merged video.'
+    )
+    bot.send_message(message.chat.id, help_msg)
 
 
 bot.polling()

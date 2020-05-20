@@ -14,6 +14,8 @@ users_files = {}
 
 @bot.message_handler(content_types=['video'])
 def handle_video(message):
+    """Add sent video to user's video list."""
+
     chat_id = message.chat.id
     if chat_id in users_files:
         users_files[chat_id].append(message.video.file_id)
@@ -23,6 +25,8 @@ def handle_video(message):
 
 @bot.message_handler(commands=['merge'])
 def merge(message):
+    """Merge user's videos."""
+
     chat_id = message.chat.id
     inputs = list()
 
@@ -50,11 +54,13 @@ def merge(message):
     users_files[chat_id] = []
 
 
-@bot.message_handler(func=lambda message: True, commands=['help'])
+@bot.message_handler(func=lambda message: True)
 def help(message):
+    """Responde any other messages with help."""
+
     help_msg = (
         'Send the videos you want to merge (preferably in MP4) and use '
-        '\\merge command to receive merged video.'
+        '/merge command to receive merged video.'
     )
     bot.send_message(message.chat.id, help_msg)
 

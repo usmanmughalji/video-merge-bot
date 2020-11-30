@@ -1,0 +1,29 @@
+{
+    "name": "Simple Video Merge Bot",
+    "description": "A Simple Telegram Bot Which Allow Us To Merge Videos",
+    "repository": "https://github.com/usmanmughalji/video-merge-bot",
+    "logo": "https://telegra.ph/file/9d25c6bc85a8bfcca98df.jpg",
+    "keywords": [
+        "python",
+        "telegram",
+        "ffmpeg"
+    ],
+    "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "env": {
+        "API_TOKEN": {
+            "description": "Bot Token From https://t.me/BotFather",
+            "value": "",
+            "required": true
+        }
+    }
+}

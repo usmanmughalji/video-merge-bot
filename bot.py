@@ -29,12 +29,12 @@ def start_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
        telebot.types.InlineKeyboardButton(
-           'Deployed By', url='telegram.me/usmanmughal'
+           '👨‍💻My owner👨‍💻', url='telegram.me/doreamonfans1'
        )
    )   
    bot.send_message(
        message.chat.id,
-       'Greetings! Video Merge Bot Here 🤗\n\n' +
+       'Hi I am disney team Video Merge Bot Here 🤗 project by @disneygrou\n\n' +
        'To Get Help Press /help',
        reply_markup=keyboard
    )
@@ -94,7 +94,9 @@ def help_command(message):
    keyboard = telebot.types.InlineKeyboardMarkup()
    keyboard.add(
        telebot.types.InlineKeyboardButton(
-           'Message The Developer', url='telegram.me/usmanmughal'
+           ' 👨‍💻Developer👨‍💻', url='telegram.me/doreamonfans1'
+           ' 👨‍🔧Updates channel👨‍🔧', url='https://t.me/disneygrou'
+           ' 🤖support group🤖', url='https://t.me/disneyteamchat'
        )
    )
    bot.send_message(

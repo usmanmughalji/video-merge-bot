@@ -2,6 +2,10 @@
 
 Telegram bot made in Python to merge videos.
 
+- Please Try Following Bot
+- More Features and Stable
+<p><a href="https://github.com/AbirHasan2005/VideoMerge-Bot"> <img src="https://img.shields.io/badge/Video%20Merge%20Bot-grey?style=for-the-badge" width="190"/></a></p>
+
 # Installation
 
 ## On Local Machine (WSL - Ubuntu)
